@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HONOR X9C SMART</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #0b5ed7;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    .specs li {
+      margin: 5px 0;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .button {
+      background-color: #0b5ed7;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    /* Модальное окно */
+    .modal {
+      display: none; /* Скрыто по умолчанию */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    /* Модальное содержимое */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Кнопка закрытия */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Анимация для появления элементов */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HONOR X9C SMART</h1>
+  <p>Преимущества нового смартфона для вашего комфорта!</p>
+</header>
+
+<section>
+  <h2 style="animation: fadeIn 1s forwards;">Посмотреть характеристики</h2>
+  <button class="button" id="showSpecsBtn">Перейти к характеристикам</button>
+</section>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModalBtn">&times;</span>
+    <h2>Характеристики HONOR X9C SMART</h2>
+    <ul>
+      <li>Дисплей: 6.7" AMOLED, 120Hz</li>
+      <li>Процессор: Qualcomm Snapdragon 695 5G</li>
+      <li>Оперативная память: 6/8 GB</li>
+      <li>Встроенная память: 128/256 GB</li>
+      <li>Камера: Основная 64MP + 2MP + 2MP, фронтальная 16MP</li>
+      <li>Аккумулятор: 4800 мАч, поддержка быстрой зарядки 66W</li>
+      <li>Операционная система: Android 12 с интерфейсом Magic UI</li>
+      <li>Подключение: 5G, Wi-Fi 6, Bluetooth 5.1</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  © 2025 HONOR X9C SMART – Все права защищены.
+</footer>
+
+<script>
+  // Получаем элементы
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("showSpecsBtn");
+  var span = document.getElementById("closeModalBtn");
+
+  // Когда пользователь нажимает на кнопку, открываем модальное окно
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // Когда пользователь нажимает на <span> (кнопка закрытия), закрываем модальное окно
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Когда пользователь кликает в любое место вне модального окна, оно закрывается
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
